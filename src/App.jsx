@@ -12,7 +12,6 @@ function App() {
   return (
     <Router>
       {/* Global theme toggle */}
-      <ThemeToggle />
 
       {/* Navigation bar */}
       <Navigation />

@@ -33,7 +33,6 @@ body {
 .container {
     text-align: center;
     background: rgba(255, 255, 255, 0.85);
-    padding: 40px;
     border-radius: 10px;
     box-shadow: 0 8px 32px rgba(255, 91, 135, 0.15);
     backdrop-filter: blur(10px) saturate(1.2);
@@ -136,15 +135,14 @@ body {
 /* Letter Page Styles */
 .letter-container {
     perspective: 1000px;
-    padding-top: 80px; /* Add space for the header */
-    min-height: calc(100vh - 80px);
+
     display: flex;
     align-items: flex-start;
     justify-content: center;
     overflow-y: auto;
     margin-top: 100px;
     margin-bottom: 40px;
-    min-height: calc(100vh - 140px);
+    
 }
 
 .letter {
@@ -175,14 +173,20 @@ body {
     margin-top: 20px;
     max-height: calc(100vh - 120px);
     overflow-y: auto;
+    height: 74vh;
     padding: 30px;
     backdrop-filter: blur(8px);
 }
 
-.envelope:hover {
-    transform: rotateY(15deg) translateY(-10px);
-    box-shadow: -10px 10px 30px rgba(255, 91, 135, 0.3);
+
+
+/* scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+    color:#ff1a4d;
+
 }
+
 
 /* Gallery Styles */
 .gallery-container {
@@ -397,13 +401,14 @@ body {
     background: linear-gradient(45deg, #ff3366, #ff8fab);
     color: white;
     border: none;
+    height: 100px;
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 5px 15px rgba(255, 91, 135, 0.3);
 }
 
-.yes-button:hover {
+.yes:hover {
     transform: scale(1.1) translateY(-3px);
     box-shadow: 0 8px 25px rgba(255, 91, 135, 0.5);
 }
@@ -531,9 +536,135 @@ body {
     }
 }
 
+/* Password container styling */
+.password-container {
+    position: relative;
+    padding: 40px;
+    border: 2px dashed #ff69b4;
+    border-radius: 15px;
+    background: #fff0f6;
+    margin: 20px auto;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Floating hearts animation */
+  .floating-hearts {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+  }
+  
+  .heart {
+    font-size: 24px;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  /* Lock icon styling with a pulse animation */
+  .lock-wrapper {
+    margin-bottom: 20px;
+  }
+  
+  .lock-icon {
+    width: 60px;
+    height: 60px;
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Teddy bear styling */
+  .teddy-wrapper {
+    margin-bottom: 20px;
+  }
+  
+  .teddy-animation {
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Password input styling */
+  .password-input {
+    width: 80%;
+    padding: 10px;
+    border: 2px solid #ff69b4;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  /* Cute unlock button styling */
+  .unlock-button {
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .unlock-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Modal styling */
+  .modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .modal-close:hover,
+  .modal-close:focus {
+    color: #ff69b4;
+  }
+
 /* Home container specific */
 .home-container {
-    min-height: calc(100vh - 140px);
+    height: calc(80vh - 80px);
     display: flex;
     flex-direction: column;
     justify-content: center;
