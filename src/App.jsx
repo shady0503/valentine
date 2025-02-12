@@ -10,7 +10,9 @@ import Proposal from './pages/Proposal';
 import FloatingHearts from './components/FloatingHearts';
 function App() {
   return (
-    <Router>
+    <Router
+    basename='/valentine/'
+    >
       {/* Global theme toggle */}
 
       {/* Navigation bar */}

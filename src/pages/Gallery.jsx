@@ -182,7 +182,7 @@ const PhotoGrid = ({ images, onImageClick }) => {
           style={{ overflow: 'hidden' }}
         >
           <img
-            src={src}
+            src={'/valentine/' + src}
             alt={`Photo ${index + 1}`}
             style={{
               width: "100%",
