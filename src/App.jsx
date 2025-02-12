@@ -11,7 +11,7 @@ import FloatingHearts from './components/FloatingHearts';
 function App() {
   return (
     <Router
-    basename='/valentine/'
+    basename='/valentine'
     >
       {/* Global theme toggle */}
 
