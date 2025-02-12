@@ -1,6 +1,6 @@
 // src/App.js
 
-import { HashRouterh as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import ThemeToggle from './components/ThemeToggle';
 import Home from './pages/Home';
