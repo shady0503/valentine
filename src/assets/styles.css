@@ -137,10 +137,10 @@ body {
     perspective: 1000px;
 
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     overflow-y: auto;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-bottom: 40px;
     
 }
@@ -162,8 +162,8 @@ body {
 /* Make the envelope take up less vertical space */
 .envelope {
     width: 80%;
+    margin-left: 30px;
     max-width: 600px;
-    margin: 0 auto;
     background: rgba(255, 255, 255, 0.9);
     padding: 20px;
     transform-style: preserve-3d;
@@ -193,7 +193,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
     margin-bottom: 40px;
     min-height: calc(100vh - 140px);
 }
@@ -408,6 +407,220 @@ body {
     box-shadow: 0 5px 15px rgba(255, 91, 135, 0.3);
 }
 
+
+
+
+
+
+
+
+
+
+/* Ensure body takes up the full width on mobile */
+
+  
+  /* A typical container to center content and manage width */
+  .container.gallery-container {
+    max-width: 1200px;
+        padding: 1rem;
+  }
+  
+  /* Title styling */
+  .gallery-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+  
+  /* Password container styling */
+  .password-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; /* or whatever height you prefer */
+    position: relative;
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 1rem;
+  }
+  
+  /* Example hearts floating around */
+  .floating-hearts {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+  }
+  
+  .heart {
+    display: inline-block;
+    font-size: 1.5rem;
+    margin: 0 0.2rem;
+    animation: floatHearts 3s infinite ease-in-out;
+  }
+  
+  @keyframes floatHearts {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+  
+  /* Password box styling */
+  .password-box {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .lock-wrapper {
+    margin-bottom: 1rem;
+  }
+  
+  .lock-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .teddy-animation {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  
+  .password-heading {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .password-input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .unlock-button {
+    background-color: pink;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  /* The heart pop animation */
+  .love-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 4rem;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Photo grid styling */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  /* Each photo item */
+  .photo-item {
+    overflow: hidden;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  /* Modal styling */
+  .modal {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .modal-content {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 0.5rem;
+    object-fit: cover;
+  }
+  
+  /* -- RESPONSIVE BREAKPOINTS -- */
+  @media (max-width: 768px) {
+    .gallery-title {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .photo-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+  
+    .password-container {
+      padding: 1rem;
+      height: auto;
+      width: 300px;
+    }
+  
+    .teddy-animation {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .password-input {
+      max-width: 100%;
+    }
+  
+    .unlock-button {
+      width: 100%;
+    }
+  
+    .modal-close {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .photo-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .gallery-title {
+      font-size: 1.25rem;
+    }
+  
+    .teddy-animation {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .modal-content {
+      max-width: 95%;
+      max-height: 70%;
+    }
+  }
+  
+
 .yes:hover {
     transform: scale(1.1) translateY(-3px);
     box-shadow: 0 8px 25px rgba(255, 91, 135, 0.5);
@@ -544,7 +757,7 @@ body {
     border-radius: 15px;
     background: #fff0f6;
     margin: 20px auto;
-    width: 300px;
+    width: 270px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   

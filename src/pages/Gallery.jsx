@@ -76,7 +76,7 @@ const PasswordPrompt = ({ onUnlock }) => {
       setAnimateLove(true);
       setTimeout(() => {
         onUnlock();
-      }, 600); // Increased to match love animation duration
+      }, 600); // matches love animation duration
     } else {
       alert('Incorrect password! Please try again.');
     }
@@ -95,14 +95,14 @@ const PasswordPrompt = ({ onUnlock }) => {
       initial="hidden"
       animate="visible"
       exit="exit"
-      style={{ position: 'relative' }}
     >
       <div className="floating-hearts">
         <span className="heart">❤️</span>
         <span className="heart">💖</span>
         <span className="heart">💘</span>
       </div>
-      <div className="password-box">
+      <div className="password-box
+      ">
         <div className="lock-wrapper">
           <img
             src="Heart lock.png"
@@ -141,14 +141,6 @@ const PasswordPrompt = ({ onUnlock }) => {
           variants={loveVariants}
           initial="hidden"
           animate="visible"
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            fontSize: '4rem',
-            pointerEvents: 'none'
-          }}
         >
           ❤️
         </motion.div>
@@ -179,7 +171,6 @@ const PhotoGrid = ({ images, onImageClick }) => {
           role="button"
           tabIndex={0}
           variants={photoItemVariants}
-          style={{ overflow: 'hidden' }}
         >
           <img
             src={'/valentine/' + src}
@@ -213,6 +204,7 @@ const Modal = ({ src, onClose }) => {
   }, [handleKeyDown]);
 
   const handleClickOutside = (e) => {
+    // If user clicks outside the enlarged image, close the modal
     if (e.target.className.includes("modal")) {
       onClose();
     }
@@ -272,7 +264,11 @@ function Gallery() {
   const closeModal = () => setModalSrc(null);
 
   return (
-    <div className="container gallery-container">
+    <div className="container gallery-container"
+    style={{
+      marginTop: "2rem",
+    }}
+    >
       <h1 className="title gallery-title">Our Beautiful Moments</h1>
       <AnimatePresence mode="wait">
         {!isUnlocked ? (
