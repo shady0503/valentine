@@ -1,6 +1,6 @@
 // src/App.js
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouterh as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import ThemeToggle from './components/ThemeToggle';
 import Home from './pages/Home';
@@ -11,7 +11,6 @@ import FloatingHearts from './components/FloatingHearts';
 function App() {
   return (
     <Router
-    basename='/valentine'
     >
       {/* Global theme toggle */}
 
